@@ -12,14 +12,14 @@ function App() {
   onAuthStateChanged(auth, (user) => {
     user ? setUser(user) : setUser(null)
   })
-  
+
   return (
     <div>
       {
         user 
         ? 
         <div>
-          <Sidebar/>
+          <Sidebar user={user}/>
           <Chat/>
         </div>
         :
