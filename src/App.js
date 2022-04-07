@@ -1,5 +1,4 @@
-import React from "react";
-//Importamos la aplicación/credenciales
+import React, { useState } from "react";
 import firebaseApp from "./firebase/credenciales";
 
 // Conforme se necesite, importar los demás servicios y funciones. Por ejemplo:
@@ -8,10 +7,17 @@ import firebaseApp from "./firebase/credenciales";
 const auth = getAuth(firebaseApp); */
 
 function App() {
+  const [user, setUser] = useState()
   return (
     <div>
-      <p style={{ color: "black" }}>Hola</p>
-      <button> ¡Buenas!</button>
+      {
+        user ? 
+        <div>
+          
+        </div>
+        :
+        <p></p>
+      }
     </div>
   );
 }
