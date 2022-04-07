@@ -1,22 +1,29 @@
 import React, { useState } from "react";
+import { Sidebar } from './components/Sidebar';
+import { Chat } from './components/Chat'
+import { Login } from './components/Login'
+
 import firebaseApp from "./firebase/credenciales";
-
-// Conforme se necesite, importar los demás servicios y funciones. Por ejemplo:
-
-/* import { getAuth, onAuthStateChanged } from "firebase/auth";
-const auth = getAuth(firebaseApp); */
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+const auth = getAuth(firebaseApp); 
 
 function App() {
-  const [user, setUser] = useState()
+  const [user, setUser] = useState(null)
+  onAuthStateChanged(auth, (user) => {
+    user ? setUser(user) : setUser(null)
+  })
+  
   return (
     <div>
       {
-        user ? 
+        user 
+        ? 
         <div>
-          
+          <Sidebar/>
+          <Chat/>
         </div>
         :
-        <p></p>
+        <Login/>
       }
     </div>
   );
