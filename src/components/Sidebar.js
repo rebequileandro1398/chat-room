@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import { Avatar } from '@material-ui/core'
-import { ExpandMore, Add, Mic, Settings, Headset } from '@material-ui/icons'
+import { Avatar } from '@mui/material'
+import AddIcon from '@mui/icons-material/Add';
 import firebaseApp from '../firebase/credenciales'
 import { getFirestore, doc, setDoc, collection, getDocs } from 'firebase/firestore'
-import { map } from '@firebase/util'
 import { getAuth, signOut } from 'firebase/auth'
 
 const db = getFirestore(firebaseApp)
@@ -40,7 +39,7 @@ export const Sidebar = ({user, setCurrentChanel}) => {
     <div>
       <div>
         <h4>Canales</h4>
-        <Add onClick={addChanel}/>
+        <AddIcon onClick={()=> addChanel()}/>
         <div>
           {
             chanels?.map(e => <div key={e.id} onClick={()=> setCurrentChanel(e.name)}>

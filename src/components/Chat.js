@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Send } from '@material-ui/icons'
+import SendIcon from '@mui/icons-material/Send';
 import firebaseApp from '../firebase/credenciales'
-import {getFirestore, doc, setDoc, collection, getDocs, onSnapshot} from 'firebase/firestore'
+import {getFirestore, doc, setDoc, collection, onSnapshot} from 'firebase/firestore'
 import { Message } from './Message'
 
 const db = getFirestore(firebaseApp)
@@ -52,7 +52,7 @@ export const Chat = ({currentChanel, user}) => {
             onChange={(e) => setMessage(e.target.value)}/>
           <button 
             disabled={ currentChanel ? false : true}
-            type='submit'><Send/></button>
+            type='submit'><SendIcon/></button>
         </form>
       </div>
     </div>
