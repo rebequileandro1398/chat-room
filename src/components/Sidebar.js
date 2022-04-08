@@ -4,7 +4,11 @@ import { ExpandMore, Add, Mic, Settings, Headset } from '@material-ui/icons'
 import firebaseApp from '../firebase/credenciales'
 import { getFirestore, doc, setDoc, collection, getDocs } from 'firebase/firestore'
 import { map } from '@firebase/util'
+import { getAuth, signOut } from 'firebase/auth'
+
 const db = getFirestore(firebaseApp)
+const auth = getAuth(firebaseApp)
+
 
 export const Sidebar = ({user, setCurrentChanel}) => {
   useEffect(()=>{
@@ -31,7 +35,6 @@ export const Sidebar = ({user, setCurrentChanel}) => {
       arr.push(e.data())
     });
     setChanels(arr)
-    console.log(arr)
   }
   return (
     <div>
@@ -50,6 +53,7 @@ export const Sidebar = ({user, setCurrentChanel}) => {
         <Avatar src={user.photoURL}/>
         <h4>{user.displayName}</h4>
       </div>
+      <button onClick={()=> signOut(auth)}>cerrar sesion</button>
     </div>
   )
 }
