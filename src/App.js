@@ -9,6 +9,7 @@ const auth = getAuth(firebaseApp);
 
 function App() {
   const [user, setUser] = useState(null)
+  const [currentChanel, setCurrentChanel] = useState(null)
   onAuthStateChanged(auth, (user) => {
     user ? setUser(user) : setUser(null)
   })
@@ -19,8 +20,15 @@ function App() {
         user 
         ? 
         <div>
-          <Sidebar user={user}/>
-          <Chat/>
+          <Sidebar 
+            user={user} 
+            setCurrentChanel={setCurrentChanel}
+          />
+
+          <Chat 
+            user={user}
+            currentChanel={currentChanel}
+          />
         </div>
         :
         <Login/>

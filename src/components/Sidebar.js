@@ -6,7 +6,7 @@ import { getFirestore, doc, setDoc, collection, getDocs } from 'firebase/firesto
 import { map } from '@firebase/util'
 const db = getFirestore(firebaseApp)
 
-export const Sidebar = ({user}) => {
+export const Sidebar = ({user, setCurrentChanel}) => {
   useEffect(()=>{
     getChanels()
   } , [])
@@ -40,7 +40,9 @@ export const Sidebar = ({user}) => {
         <Add onClick={addChanel}/>
         <div>
           {
-            chanels?.map(e => <div key={e.id}>{e.name}</div>)
+            chanels?.map(e => <div key={e.id} onClick={()=> setCurrentChanel(e.name)}>
+              <span>#</span> {e.name}
+            </div>)
           }
         </div>
       </div>
