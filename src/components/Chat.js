@@ -18,7 +18,9 @@ export const Chat = ({currentChanel, user}) => {
   const [message, setMessage] = useState('')
   const [chat, setChat] = useState([])
   const [showEmoji, setShowEmoji] = useState(false)
+  const anchor = useRef()
 
+  
   const onEmojiClick = (event, emojiObject) => {
     setMessage(message.concat(emojiObject.emoji))
     setShowEmoji(false)
@@ -34,6 +36,7 @@ export const Chat = ({currentChanel, user}) => {
       userMessage: message,
     })
     setMessage('')
+    anchor.current.scrollIntoView({behavior: 'smooth'})
   }
 
 
@@ -53,6 +56,7 @@ export const Chat = ({currentChanel, user}) => {
           :
           <LinearProgress/>
           }
+          <div ref={anchor} style={{marginBottom: '100px'}}></div>
         </div>
       </div>
       <div className='containerInputChat'>
