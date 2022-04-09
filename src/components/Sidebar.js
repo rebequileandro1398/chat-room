@@ -19,7 +19,7 @@ export const Sidebar = ({user, setCurrentChanel}) => {
 
   const [chanels, setChanels] = useState([])
   const addChanel =() => {
-    const name = prompt('nombre del canal?')
+    const name = prompt('¿nombre del canal?')
     if(name) {
       const docRef = doc(db, `chanels/${name}`)
       setDoc(docRef, {
