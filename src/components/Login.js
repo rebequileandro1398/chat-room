@@ -9,7 +9,8 @@ const provider = new GoogleAuthProvider();
 
 
 export const Login = () => {
-  const toAccess = () => {
+  const toAccess = (e) => {
+    e.preventDefault();
     signInWithRedirect(auth, provider)
   }
   return (
