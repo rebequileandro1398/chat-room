@@ -5,6 +5,8 @@ import firebaseApp from '../firebase/credenciales'
 import { getFirestore, doc, setDoc, collection, getDocs } from 'firebase/firestore'
 import { getAuth, signOut } from 'firebase/auth'
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
+import LinearProgress from '@mui/material/LinearProgress'
+import Tooltip from '@mui/material/Tooltip';
 
 const db = getFirestore(firebaseApp)
 const auth = getAuth(firebaseApp)
@@ -42,13 +44,19 @@ export const Sidebar = ({user, setCurrentChanel}) => {
         <div className='sidebarHeader'>
          <h4>Salas</h4>
          <div className='containerIconsHeader'>
-          <AddIcon className='iconHeader' onClick={()=> addChanel()}/>
-          <MeetingRoomIcon className='iconHeader' onClick={()=> signOut(auth)}/>
+           <Tooltip title='Crear sala'>
+              <AddIcon className='iconHeader' onClick={()=> addChanel()}/>
+           </Tooltip>
+           <Tooltip title='Salir'>
+              <MeetingRoomIcon className='iconHeader' onClick={()=> signOut(auth)}/>
+           </Tooltip>
          </div>
         </div>
         <div className='sidebarChanels'>
           {
-            chanels?.map(e => <div className='chanel' key={e.id} onClick={()=> setCurrentChanel(e.name)}>
+            !chanels ? <LinearProgress/>
+            :
+            chanels.map(e => <div className='chanel' key={e.id} onClick={()=> setCurrentChanel(e.name)}>
             <h3># {e.name}</h3></div>)
           }
         </div>

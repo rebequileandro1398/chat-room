@@ -1,6 +1,8 @@
 import React from 'react'
 import firebaseApp from '../firebase/credenciales'
 import {getAuth, GoogleAuthProvider, signInWithRedirect} from 'firebase/auth'
+import LoginIcon from '@mui/icons-material/Login';
+import Tooltip from '@mui/material/Tooltip';
 
 const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
@@ -11,11 +13,12 @@ export const Login = () => {
     signInWithRedirect(auth, provider)
   }
   return (
-    <div>
-        <div>
-          <h1>Logearse con google</h1>
-        </div>
-        <button onClick={toAccess}>Acceder</button>
+    <div className='loginContainer'>
+      <div className='logincard'>
+        <Tooltip title='Acceder con Google'>
+          <LoginIcon fontSize="large" className='Loginicon' onClick={toAccess}/>
+        </Tooltip>
+      </div>
     </div>
   )
 }

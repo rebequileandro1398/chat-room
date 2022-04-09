@@ -7,10 +7,41 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: sans-serif;
 }
 .container{
     display: flex;
 }
+/* login styles */
+.loginContainer{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 33, 48);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logincard{
+    background-color: rgb(0, 22, 32);
+    display: flex;
+    width: 20rem;
+    height: 10rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: rgb(204, 204, 204);
+    border-radius: .5rem;
+}
+.Loginicon{
+    color: rgb(0, 89, 131);
+    cursor: pointer;
+}
+.Loginicon:hover{
+    color: rgb(212, 212, 212);
+}
+
+/* sidebar styles */
 .sidebarContainer{
     background-color: rgb(0, 22, 32);
     height: 90vh;
@@ -18,7 +49,7 @@
     padding: 1rem;
     margin: 1rem;
     border-radius: .5rem;
-    color: rgba(255, 255, 255, 0.76);
+    color: rgb(175, 175, 175);
     font-family: sans-serif;
 }
 .sidebarHeader{
@@ -44,16 +75,23 @@
 .sidebarChanels{
     height: 28rem;
     overflow-y: scroll;
+    overflow-x: hidden;
     
 }
 .sidebarChanels::-webkit-scrollbar{
     display: none;
 }
 .chanel{
-    margin-bottom: .5rem;
+    cursor: pointer;
+    padding: 1rem;
     overflow:hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    transition: all 0.1s ease-in-out; 
+}
+.chanel:hover{
+    color: white;
+    transform: scale(1.1);
 }
 .infoUser{
     display: flex;
