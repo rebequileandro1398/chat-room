@@ -4,6 +4,7 @@ import AddIcon from '@mui/icons-material/Add';
 import firebaseApp from '../firebase/credenciales'
 import { getFirestore, doc, setDoc, collection, getDocs } from 'firebase/firestore'
 import { getAuth, signOut } from 'firebase/auth'
+import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 
 const db = getFirestore(firebaseApp)
 const auth = getAuth(firebaseApp)
@@ -36,23 +37,26 @@ export const Sidebar = ({user, setCurrentChanel}) => {
     setChanels(arr)
   }
   return (
-    <div>
+    <div className='sidebarContainer'>
       <div>
-        <h4>Canales</h4>
-        <AddIcon onClick={()=> addChanel()}/>
-        <div>
+        <div className='sidebarHeader'>
+         <h4>Salas</h4>
+         <div className='containerIconsHeader'>
+          <AddIcon className='iconHeader' onClick={()=> addChanel()}/>
+          <MeetingRoomIcon className='iconHeader' onClick={()=> signOut(auth)}/>
+         </div>
+        </div>
+        <div className='sidebarChanels'>
           {
-            chanels?.map(e => <div key={e.id} onClick={()=> setCurrentChanel(e.name)}>
-              <span>#</span> {e.name}
-            </div>)
+            chanels?.map(e => <div className='chanel' key={e.id} onClick={()=> setCurrentChanel(e.name)}>
+            <h3># {e.name}</h3></div>)
           }
         </div>
       </div>
-      <div>
+      <div className='infoUser'>
         <Avatar src={user.photoURL}/>
         <h4>{user.displayName}</h4>
       </div>
-      <button onClick={()=> signOut(auth)}>cerrar sesion</button>
     </div>
   )
 }

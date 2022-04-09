@@ -1,5 +1,68 @@
-/* ELIMINAMOS LOS ESTILOS DE NAVEGADOR */
 @import url("./reset.css");
 
-/* AÑADE AQUÍ TUS ESTILOS */
-
+.app {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 33, 48);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container{
+    display: flex;
+}
+.sidebarContainer{
+    background-color: rgb(0, 22, 32);
+    height: 90vh;
+    width: 17rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: .5rem;
+    color: rgba(255, 255, 255, 0.76);
+    font-family: sans-serif;
+}
+.sidebarHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
+    border-bottom: 2px solid rgb(0, 89, 131);
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+}
+.containerIconsHeader{
+    display: flex;
+    gap: 1rem
+}
+.iconHeader{
+    cursor: pointer;
+    color: rgb(0, 89, 131)
+}
+.iconHeader:hover{
+    color: white
+}
+.sidebarChanels{
+    height: 28rem;
+    overflow-y: scroll;
+    
+}
+.sidebarChanels::-webkit-scrollbar{
+    display: none;
+}
+.chanel{
+    margin-bottom: .5rem;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.infoUser{
+    display: flex;
+    align-items: center;
+    border-top: 2px solid rgb(0, 89, 131);
+    margin-top: 1rem;
+    padding: 1rem;
+    gap: 1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

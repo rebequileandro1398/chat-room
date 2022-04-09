@@ -15,11 +15,11 @@ function App() {
   })
 
   return (
-    <div>
+    <div className="app">
       {
         user 
         ? 
-        <div>
+        <div className="container">
           <Sidebar 
             user={user} 
             setCurrentChanel={setCurrentChanel}
