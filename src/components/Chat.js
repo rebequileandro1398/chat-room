@@ -9,7 +9,7 @@ import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt
 
 const db = getFirestore(firebaseApp)
 
-export const Chat = ({currentChanel, user}) => {
+export const Chat = ({currentChanel, user, userColor}) => {
 
   useEffect(()=> onSnapshot(collection(db, `chanels/${currentChanel}/message`), (snapshot)=> 
       setChat(snapshot.docs.map(e => e.data()))
@@ -31,9 +31,9 @@ export const Chat = ({currentChanel, user}) => {
     const docRef = doc(db, `chanels/${currentChanel}/message/${ new Date().getTime()}`);
     setDoc(docRef, {
       id: new Date().getTime(),
-      photo: user.photoURL,
-      user: user.displayName,
+      user: user.name,
       userMessage: message,
+      color: userColor
     })
     setMessage('')
     anchor.current.scrollIntoView({behavior: 'smooth'})
