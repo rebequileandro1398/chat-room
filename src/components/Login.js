@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import firebaseApp from '../firebase/credenciales'
-import {getAuth, GoogleAuthProvider, signInWithRedirect} from 'firebase/auth'
 import LoginIcon from '@mui/icons-material/Login';
 import Tooltip from '@mui/material/Tooltip';
 

@@ -1,16 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { Avatar } from '@mui/material'
 import AddIcon from '@mui/icons-material/Add';
 import firebaseApp from '../firebase/credenciales'
 import { getFirestore, doc, setDoc, collection, getDocs } from 'firebase/firestore'
-import { getAuth, signOut } from 'firebase/auth'
 import MeetingRoomIcon from '@mui/icons-material/MeetingRoom';
 import LinearProgress from '@mui/material/LinearProgress'
 import Tooltip from '@mui/material/Tooltip';
-import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
 const db = getFirestore(firebaseApp)
-const auth = getAuth(firebaseApp)
 
 
 export const Sidebar = ({user, setCurrentChanel, setUser, setUserColor, userColor}) => {
@@ -65,12 +61,14 @@ export const Sidebar = ({user, setCurrentChanel, setUser, setUserColor, userColo
       </div>
       <div className='infoUser'>
         <div className='colorpickercontainer'>
-          <input 
-            className='colorPicker' 
-            type='color' 
-            value={userColor}
-            onChange={(e)=> setUserColor(e.target.value)}
-            />
+         <Tooltip title='Elige un color'>
+            <input 
+              className='colorPicker' 
+              type='color' 
+              value={userColor}
+              onChange={(e)=> setUserColor(e.target.value)}
+              />
+          </Tooltip>
         </div>
         <div className='userName'>
           <h4 style={{color: userColor}}>{user.name}</h4>

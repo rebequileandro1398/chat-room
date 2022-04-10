@@ -54,9 +54,12 @@ export const Chat = ({currentChanel, user, userColor}) => {
         }
         <div className='containerMessage'>
           { 
+          currentChanel ?
           chat ? chat.map(e => <Message key={e.id} message={e}/>)
           :
           <LinearProgress/>
+          :
+          <h1 style={{color: '#fff', fontSize: 'large'}}>Selecciona una sala...</h1>
           }
           <div ref={anchor} style={{marginBottom: '100px'}}></div>
         </div>
