@@ -147,6 +147,7 @@
 }
 
 
+
 /* chat styles */
 .containerChat{
     margin-right: 1rem;
@@ -232,6 +233,7 @@
 }
 
 
+
 /* message styles */
 .conrainerMessage{
     color: rgb(212, 212, 212);
@@ -254,6 +256,10 @@
     word-break: break-all;
 }
 
+
+
+
+/* medias */
 @media (max-width: 1024px) {
     .containerChat{
         width: 30rem;
@@ -288,8 +294,81 @@
         margin-bottom: -30rem;
     }
 }
+@media (max-width: 720px){
+    .messageChat{
+        height: 26rem;
+    }
+    .sidebarContainer{
+        height: 36rem;
+        width: 10rem;
+    }
+    .sidebarChanels{
+        height: 28rem;
+    }
+    .containerMessage{
+        height: 26rem;
+    }
+    .containerChat{
+        width: 25rem;
+    }
+    .containerInputChat{
+        width: 25rem;
+    }
+    .inputChat{
+        width: 25rem;
+    }
+    .inputChat{
+        width: 16rem;
+    }
+    .emojiPicker{
+        margin-bottom: -9rem;
+        margin-right: -7rem;
+    }
+}
 
-
+@media (max-width: 540px){
+    .messageChat{
+        height: 26rem;
+    }
+    .sidebarContainer{
+        height: 36rem;
+        width: 7rem;
+    }
+    .sidebarChanels{
+        height: 28rem;
+    }
+    .containerMessage{
+        height: 26rem;
+    }
+    .containerChat{
+        width: 15rem;
+    }
+    .containerInputChat{
+        width: 15rem;
+    }
+    .inputChat{
+        width: 15rem;
+    }
+    .inputChat{
+        width: 6rem;
+    }
+    .emojiPicker{
+        margin-bottom: -9rem;
+        margin-right: -7rem;
+    } 
+    .sidebarHeaderTitle{
+        display: none;
+    }
+    .sidebarHeader{
+        justify-content: center;
+    }
+    .userName{
+        display: none;
+    }
+    .infoUser{
+        justify-content: center;
+    }
+}
 @media (max-width: 415px) {
     .messageChat{
         height: 27rem;
@@ -297,12 +376,6 @@
     .sidebarContainer{
         height: 34rem;
         width: 3rem;
-    }
-    .sidebarHeaderTitle{
-        display: none;
-    }
-    .sidebarHeader{
-        justify-content: center;
     }
     .containerIconsHeader{
         gap: 0;
@@ -322,12 +395,6 @@
         height: 0;
         font-size: medium;
     }
-    .userName{
-        display: none;
-    }
-    .infoUser{
-        justify-content: center;
-    }
     .colorpickercontainer{
         width: 1rem;
         height: 1rem;
@@ -342,9 +409,6 @@
     .inputChat{
         width: 7.5rem;
         height: .6rem;
-    }
-    .messageDate{
-        display: none;
     }
     .emojiPicker{
         margin-bottom: -10rem;
