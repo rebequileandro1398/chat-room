@@ -44,7 +44,7 @@ export const Sidebar = ({user, setCurrentChanel, setUser, setUserColor, userColo
     <div className='sidebarContainer'>
       <div>
         <div className='sidebarHeader'>
-         <h4>Salas</h4>
+         <h4 className='sidebarHeaderTitle'>Salas</h4>
          <div className='containerIconsHeader'>
            <Tooltip title='Crear sala'>
               <AddIcon className='iconHeader' onClick={()=> addChanel()}/>
@@ -72,7 +72,9 @@ export const Sidebar = ({user, setCurrentChanel, setUser, setUserColor, userColo
             onChange={(e)=> setUserColor(e.target.value)}
             />
         </div>
-        <h4 style={{color: userColor}}>{user.name}</h4>
+        <div className='userName'>
+          <h4 style={{color: userColor}}>{user.name}</h4>
+        </div>
       </div>
     </div>
   )

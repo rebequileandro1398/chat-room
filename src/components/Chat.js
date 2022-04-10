@@ -46,9 +46,11 @@ export const Chat = ({currentChanel, user, userColor}) => {
         <h3>{currentChanel}</h3>
       </div>
       <div className='messageChat'>
-        { showEmoji && <Picker
-            pickerStyle={{position: 'absolute', marginRight: '-30rem', marginBottom: '-6rem'}} 
-            onEmojiClick={onEmojiClick}/>
+        { showEmoji && 
+          <div className='emojiPicker'>
+            <Picker
+              onEmojiClick={onEmojiClick}/>
+          </div>
         }
         <div className='containerMessage'>
           { 
@@ -70,7 +72,6 @@ export const Chat = ({currentChanel, user, userColor}) => {
             onChange={(e) => setMessage(e.target.value)}/>
 
           <SentimentSatisfiedAltIcon 
-            fontSize='large' 
             className='emojibutton'
             onClick={() => setShowEmoji(!showEmoji)}
             />
@@ -83,7 +84,6 @@ export const Chat = ({currentChanel, user, userColor}) => {
             onClick={(e)=> handleSubmit(e)}
             >
             <SendIcon 
-              fontSize="large"
               className='Sendicon'
               />
           </button>

@@ -61,6 +61,7 @@
 }
 
 
+
 /* sidebar styles */
 .sidebarContainer{
     background-color: rgb(0, 22, 32);
@@ -71,6 +72,7 @@
     border-radius: .5rem;
     color: rgb(175, 175, 175);
     font-family: sans-serif;
+    overflow-x: hidden;
 }
 .sidebarHeader{
     display: flex;
@@ -122,7 +124,10 @@
     padding: 1rem;
     gap: 1rem;
     overflow: hidden;
-    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.userName{
+    overflow: hidden;
     text-overflow: ellipsis;
 }
 [type="color"] {
@@ -143,6 +148,9 @@
 
 
 /* chat styles */
+.containerChat{
+    margin-right: 1rem;
+}
 .currentChanel{
     display:flex;
     align-items: center;
@@ -217,12 +225,11 @@
 .emojibutton:hover{
     color: white;
 }
-
-
-
-
-
-
+.emojiPicker{
+    position: absolute;
+    margin-right: -30rem;
+    margin-bottom: -6rem;
+}
 
 
 /* message styles */
@@ -245,4 +252,118 @@
     margin-top: .3rem;
     width: 35rem;
     word-break: break-all;
+}
+
+@media (max-width: 1024px) {
+    .containerChat{
+        width: 30rem;
+    }
+    .containerInputChat{
+        width: 30rem;
+    }
+    .inputChat{
+        width: 20rem;
+    }
+    .sidebarContainer{
+        width: 13rem;
+    }
+    .emojiPicker{
+        margin-right: -10rem;
+    }
+}
+@media (max-width: 768px) {
+    .messageChat{
+        height: 47rem;
+    }
+    .sidebarContainer{
+        height: 57rem;
+    }
+    .sidebarChanels{
+        height: 49rem;
+    }
+    .containerMessage{
+        height: 45rem;
+    }
+    .emojiPicker{
+        margin-bottom: -30rem;
+    }
+}
+
+
+@media (max-width: 415px) {
+    .messageChat{
+        height: 27rem;
+    }
+    .sidebarContainer{
+        height: 34rem;
+        width: 3rem;
+    }
+    .sidebarHeaderTitle{
+        display: none;
+    }
+    .sidebarHeader{
+        justify-content: center;
+    }
+    .containerIconsHeader{
+        gap: 0;
+    }
+    .sidebarChanels{
+        height: 26rem;
+
+    }
+    .chanel{
+        padding-left: 0%;
+        font-size: small;
+    }
+    .containerMessage{
+        height: 25rem;
+    }
+    .currentChanel{
+        height: 0;
+        font-size: medium;
+    }
+    .userName{
+        display: none;
+    }
+    .infoUser{
+        justify-content: center;
+    }
+    .colorpickercontainer{
+        width: 1rem;
+        height: 1rem;
+    }
+    .containerChat{
+        width: 15rem;
+    }
+    .containerInputChat{
+        width: 15rem;
+        height: 3rem;
+    }
+    .inputChat{
+        width: 7.5rem;
+        height: .6rem;
+    }
+    .messageDate{
+        display: none;
+    }
+    .emojiPicker{
+        margin-bottom: -10rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .messageChat{
+        height: 27rem;
+    }
+    .sidebarContainer{
+        height: 34rem;
+        width: 2rem;
+    }
+   
+    .colorpickercontainer{
+        width: 1rem;
+        height: 1rem;
+    }
+  
 }
